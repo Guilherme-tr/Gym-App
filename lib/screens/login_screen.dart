@@ -14,6 +14,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        padding: EdgeInsets.symmetric(horizontal: 50),
         decoration: BoxDecoration(
             gradient: LinearGradient(
                 begin: Alignment.topCenter,
@@ -21,7 +22,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 colors: [topColor, bottomColor])),
         child: Column(
           children: [
-            Image.asset("assets/fitness.png"),
+            Image.asset(
+              "assets/fitness.png",
+              height: 125,
+            ),
+            Padding(
+                padding: EdgeInsets.only(
+              bottom: 15,
+            )),
             Text(
               "Entrar",
               textAlign: TextAlign.center,
@@ -29,6 +37,19 @@ class _LoginScreenState extends State<LoginScreen> {
                 color: Colors.white,
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
+              ),
+            ),
+            Form(
+              child: Column(
+                children: [
+                  TextFormField(
+                    autofocus: true,
+                    decoration: InputDecoration(
+                        prefixIcon: Icon(
+                      Icons.mail_outline,
+                    )),
+                  )
+                ],
               ),
             )
           ],
